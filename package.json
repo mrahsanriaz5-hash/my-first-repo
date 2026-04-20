@@ -1,0 +1,39 @@
+{
+  "name": "infraspine-monitor",
+  "version": "0.1.0",
+  "description": "InfraSpine Monitor – Backend (Phase 0)",
+  "main": "dist/server.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "tsc --noEmit",
+    "migration:run": "ts-node -r reflect-metadata node_modules/typeorm/cli.js migration:run -d src/database/data-source.ts",
+    "migration:revert": "ts-node -r reflect-metadata node_modules/typeorm/cli.js migration:revert -d src/database/data-source.ts",
+    "migration:generate": "ts-node -r reflect-metadata node_modules/typeorm/cli.js migration:generate -d src/database/data-source.ts"
+  },
+  "keywords": [
+    "monitoring",
+    "zabbix",
+    "infraspine"
+  ],
+  "author": "InfraSpine",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "lucide-react": "^0.577.0",
+    "mysql2": "^3.18.2",
+    "node-cron": "^3.0.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.28"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.14.2",
+    "@types/node-cron": "^3.0.11",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.4.5"
+  }
+}

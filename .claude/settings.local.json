@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=vfs&limit=30\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=net&limit=30\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=system&limit=30\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=system.cpu&limit=10\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=net.if.in&limit=20\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=vm.memory&limit=20\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=system.swap&limit=10\")",
+      "Bash(python3 -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(''count:'', d.get\\(''count''\\), ''items:'', [i[''key_''] for i in d.get\\(''items'',[]\\)]\\)\")",
+      "Bash(npx tsc --noEmit)",
+      "Bash(curl -s \"http://localhost:3001/api/debug/items?key=vfs&limit=50\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=vfs&limit=50\")",
+      "Bash(curl -s \"http://localhost:5151/api/debug/items?key=ALL\")",
+      "Bash(python -m json.tool)",
+      "Bash(curl:*)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); prefixes=d.get\\(''uniqueKeyPrefixes'',[]\\); [print\\(p\\) for p in prefixes if any\\(x in p.lower\\(\\) for x in [''disk'',''fs'',''storage'',''drive'',''vfs'',''perf'',''logical'',''volume'',''wmi'',''system.disk'']\\)]\")",
+      "Bash(python:*)",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"const d=require\\(''fs''\\).readFileSync\\(''/dev/stdin'',''utf8''\\); const p=JSON.parse\\(d\\); p.items.forEach\\(i=>console.log\\(JSON.stringify\\(i\\)\\)\\)\")",
+      "Bash(npm install react-router-dom)",
+      "Bash(npm install -D @types/react-router-dom)"
+    ]
+  }
+}
